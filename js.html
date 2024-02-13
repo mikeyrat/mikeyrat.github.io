@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Javascript Stuff</title>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="paragraph">
+            On a crystal morning, I can see the dew drops falling. <BR>Down from gleaming heaven, I can hear the voices call; <BR>"When you coming home my son, this world is not for you? <br>Tell me what you're gonna do."
+            
+        </p>
+        <p>
+            Kansas. (n.d.). Miracles out of nowhere [MP3]. On Leftoverture. Epic Legacy. Retrieved February 3, 2024,. 
+        </p>
+        <table id='newTable'>
+            <tr><td>Hello</td><td>How are you?</td></tr>
+        </table>
+        <p>
+            Alert 1 is for "is 465 a number?""
+            <br>Alert 2 is for "is 'Mikey' a number?""
+        </p>
+        <button id="theButton">Push This Button At Your Peril!</button>
+
+        <script>
+            function background(color) {
+                document.getElementById('paragraph').style.backgroundColor = color;
+            }
+            background('green');
+
+            function addRow(tableId, cellOneData, cellTwoData) {
+                var table = document.getElementById(tableId)
+                var newRow = table.insertRow(-1);
+                var cellOne = newRow.insertCell(0);
+                var cellTwo = newRow.insertCell(1);
+                cellOne.innerHTML = cellOneData;
+                cellTwo.innerHTML = cellTwoData;
+            }
+            addRow('newTable', 'Hello Yourself!', 'I am fine.');
+            addRow('newTable', 'Nice to hear!', 'Go Chiefs!');
+
+            function isNumber(value) {
+                return !isNaN(value) && typeof value === 'number';
+            }
+            alert(isNumber(465));
+            alert(isNumber('Mikey'));
+
+            document.getElementById('theButton').addEventListener('click', function() {
+                alert('Clicked!');
+            });
+
+        </script>
+        
+    </body>
+</html>
